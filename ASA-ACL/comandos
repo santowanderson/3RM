@@ -1,0 +1,7 @@
+access-list T1 extended permit tcp host 192.168.10.2 host 192.168.20.2 eq 80
+access-group T1 in interface outside
+access-list T1 extended permit icmp host 192.168.10.2 host 192.168.20.2 
+access-list T1 extended permit icmp host 192.168.20.2 host 192.168.10.2
+access-list T1 extended permit tcp host 192.168.10.2 host 192.168.20.2 eq ftp
+access-list T2 extended permit tcp host 192.168.10.2 host 192.168.20.2 eq ftp
+access-group T2 in interface dmz
