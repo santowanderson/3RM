@@ -1,0 +1,23 @@
+FIREWALL
+
+enable
+configure terminal
+hostname CISCOFW-BERLIM04
+interface g1/4
+ip address 10.10.104.1 255.255.255.0
+nameif inside
+description REDE CLIENTES
+exit
+interface g1/2
+ip address 172.30.104.1 255.255.255.0
+nameif outisde
+description REDE ROUTER-FIREWALL
+exit
+interface g1/3
+ip address 172.31.104.1 255.255.255.0
+nameif dmz
+security-level 50
+description REDE SERVIDORES
+exit
+access-list T1 extended permit icmp any any
+access-group T1 in interface dmz
