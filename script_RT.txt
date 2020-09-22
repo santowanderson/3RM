@@ -15,12 +15,12 @@ transport input ssh
 exec-timeout 5
 login local
 exit
-interface g0/1
+interface g0/0
 ip address 192.168.132.104 255.255.255.0
 description REDE ESCOLA
 no shutdown
 exit
-interface g0/0
+interface g0/1
 ip address 172.30.104.2 255.255.255.0
 description REDE FIREWALL
 no shutdown
